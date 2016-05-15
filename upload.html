@@ -15,7 +15,25 @@
         align-content: center;
         width: 100%;
     }
-    
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <meta charset="utf-8">
@@ -26,11 +44,24 @@
   <link rel="stylesheet" type="text/css" href="firepano.css">
 </head>
 <body id="body">
-  <a href="#" onclick="requestFullScreen(this)" style="position: fixed;top:5px;right: 5px;">Go full screen</a>
+
   <div id="spin"></div>
-  <input  type="file" accept="image/*" capture="camera" id="file-upload">
+
   <br/>
-  <img class="pano" id="pano" />
+
+
+
+
+  <form class="form-inline area">
+
+      <div class="form-group">
+
+          <div class="btn btn-default btn-file btn-lg">
+              Browse <input  type="file"  accept="image/*" capture="camera" id="file-upload">
+          </div>
+      </div>
+
+  </form>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="//cdn.firebase.com/v0/firebase.js"></script>
