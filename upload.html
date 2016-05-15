@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .area{
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      display:block;
+    }
+
+    .content {
+      display:table-cell;
+      vertical-align:middle;
+        align-content: center;
+        width: 100%;
+    }
+    
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <title>Firepano: Share huge panorams - #1 image sharing tool using Firebase since December 18, 2012!</title>
+
+  
+
+  <link rel="stylesheet" type="text/css" href="firepano.css">
+</head>
+<body id="body">
+  <a href="#" onclick="requestFullScreen(this)" style="position: fixed;top:5px;right: 5px;">Go full screen</a>
+  <div id="spin"></div>
+  <input  type="file" accept="image/*" capture="camera" id="file-upload">
+  <br/>
+  <img class="pano" id="pano" />
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//cdn.firebase.com/v0/firebase.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script src="firepano.js"></script>
+<script>
+  document.getElementById("file-upload").addEventListener('change', handleFileSelect, false);
+</script>
+</html>
