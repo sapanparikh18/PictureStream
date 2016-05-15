@@ -9,7 +9,7 @@ function handleFileSelect(evt) {
       var filePayload = e.target.result;
       // Generate a location that can't be guessed using the file's contents and a random number
       //var hash = CryptoJS.SHA256(Math.random() + CryptoJS.SHA256(filePayload));
-      var f = new Firebase(firebaseRef + 'photo/stream2' );
+      var f = new Firebase(firebaseRef + 'stream' );
       spinner.spin(document.getElementById('spin'));
       // Set the file payload to Firebase and register an onComplete handler to stop the spinner and show the preview
       f.push(filePayload, function() {
@@ -43,7 +43,7 @@ function requestFullScreen(element) {
     var i = 0;
         // A hash was passed in, so let's retrieve and render it.
         spinner.spin(document.getElementById('spin'));
-        var f = new Firebase(firebaseRef + '/photo/stream2');
+        var f = new Firebase(firebaseRef + 'stream');
         f.on('child_added', function (snap) {
             var payload = snap.val();
             if (payload != null) {
